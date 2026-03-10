@@ -1,21 +1,16 @@
 #include<stdio.h>
-int add(int i,int n,int sum)
+int sum(int n)
 {
-	if(i>n)
-	{
-		return sum;
-	}
-	sum=sum+i;
-	return add(i+1,n,sum);
+    if(n == 0)
+        return 0;
+    else
+        return n + sum(n-1);
 }
 int main()
 {
-int m,n;
-int sum=0;
-printf("enter the start and end range value ");
-scanf("%d %d",&m,&n);
-int sum1=add(m,n,0);
-printf("sum1=%d\n",sum1);
-return 0;
+    int n;
+    printf("Enter number: ");
+    scanf("%d", &n);
+    printf("Sum = %d", sum(n));
+    return 0;
 }
-
